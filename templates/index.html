@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <title>Fractal generator</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='fractal_icon.jpg') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='fractal_icon.jpg') }}" class="icon" />
+  <h3>Введите описание картинки</h3>
+  <form action="/" method="post">
+    <input type="text" name="promt" placeholder="Введите описание картинки" required />
+    <input type="submit" value="Сгенерировать картинку" />
+  </form>
+  {% if result %}
+  <img class="result" src={{ result }}>
+  {% endif %}
+</body>
