@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>Fractal generator</title>
+  <title>Генератор профиля</title>
   <link
     rel="shortcut icon"
     href="{{ url_for('static', filename='fractal_icon.jpg') }}"
@@ -10,12 +10,24 @@
 
 <body>
   <img src="{{ url_for('static', filename='fractal_icon.jpg') }}" class="icon" />
-  <h3>Введите описание картинки</h3>
+
+  <p>Привет! Данное приложение генерирует профиль для соц сети. Стоит лишь ввести свое ФИО, описать свою внешность и некоторые факты о себе, которые вы хотели бы упомянуть в описании профиля. Удачи!</p>
+
+  <h3>Введите описание вашей внешности и Ваше ФИО</h3>
   <form action="/" method="post">
-    <input type="text" name="promt" placeholder="Введите описание картинки" required />
-    <input type="submit" value="Сгенерировать картинку" />
+    <input type="text" name="fio" placeholder="Введите Ваше ФИО" required />
+    <input type="text" name="user_facts" placeholder="Введите факты о себе" required />
+    <input type="text" name="sex" placeholder="Пол: мужской/женский" required />
+    <input type="text" name="user_description" placeholder="Опишите Вашу внешность" required />
+    <input type="submit" name="submit_button" value="Сгенерировать профиль" />
   </form>
-  {% if result %}
-  <img class="result" src={{ result }}>
+
+  <a href="/showcase">
+    <input type="submit" name="submit_button" value="Витрина" />
+  </a>
+
+  {% if user %}
+  <img class="user" src={{ user.photo_url }}>
+  <h5>{{ user.profile_description }}</h5>
   {% endif %}
 </body>

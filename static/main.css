@@ -60,6 +60,16 @@ input[type="submit"] {
   text-align: center;
   cursor: pointer;
 }
+a {
+  margin-top: 24px;
+  color: #fff;
+  background-color: #10a37f;
+  text-align: center;
+  width: auto;
+}
+h3, h2, h4, h5 {
+  text-align: center;
+}
 .result {
   font-weight: bold;
   margin-top: 40px;

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Витрина</title>
+    <link
+        rel="shortcut icon"
+        href="{{ url_for('static', filename='fractal_icon.jpg') }}"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+<body>
+    <img src="{{ url_for('static', filename='fractal_icon.jpg') }}" class="icon" />
+    <h3>Профили других пользователей</h3>
+    <h2>Тут вы можете посмотреть профили, которые были сгенерены для других пользователей</h2>
+    <div>
+        <form>
+            {% for user in users %}
+                <h4>{{ user.fio }}</h4>
+                <h5>{{ user.profile_description }}</h5>
+                <img class="user" src={{ user.photo_url }}>
+            {% endfor %}
+        </form>
+        <a href="/">
+            <input type="submit" name="submit_button" value="Создать профиль" />
+        </a>
+    </div>
+
+</body>
+</html>
