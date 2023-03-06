@@ -16,8 +16,9 @@ def index():
         user_facts = request.form["user_facts"]
         sex = request.form["sex"]
         user_description = request.form["user_description"]
+        image_type = request.form["image_type"]
 
-        image_url = create_image(user_description, sex)
+        image_url = create_image(user_description, sex, image_type)
 
         profile_description = create_profile_description(
             user_facts=user_facts, user_description=user_description, sex=sex, fio=fio
@@ -39,4 +40,7 @@ def index():
 @app.route("/showcase", methods=("GET",))
 def showcase():
     users = get_all_users()
+    
+    print(users[0].photo_url)
+
     return render_template("showcase.html", users=users)

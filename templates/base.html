@@ -1,0 +1,69 @@
+<head>
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/bootstrap.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+
+
+    <title>{% block title %}{% endblock %}</title>
+
+
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" >ProfileGenerator.ru </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Генератор профиля</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/showcase">Витрина</a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+</div>
+
+    {% block body %}{% endblock %}
+
+</div>
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top mt-auto">
+    <div class="col-md-4 d-flex align-items-center">
+      <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+        <svg class="bi" width="30" height="24"></svg>
+      </a>
+      <span class="mb-3 mb-md-0 text-muted">© ООО «Чебурашка», 2022-2023</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <span class="mb-3 mb-md-0 text-muted">profile_generator@yandex.ru  </span>
+        <svg class="bi" width="30" height="24"></svg>
+    </ul>
+
+</footer>
+
+
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>  
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
+</html>

@@ -44,8 +44,13 @@ def generate_prompt_for_profile_description(
 Описание профиля:"""
 
 
-def create_image(promt: str, sex: str) -> str:
-    base_promt = f"Реалистичная картинка человека в стиле bitmoji: пол = {sex}, дополнительное описание: "
+def create_image(promt: str, sex: str, image_type: str) -> str:
+
+    if image_type == "bitmoji":
+        base_promt = f"Реалистичная картинка человека в стиле bitmoji: пол = {sex}, дополнительное описание: "
+    else:
+        base_promt = f"Реалистичная картинка человека в стиле anime: пол = {sex}, дополнительное описание: "
+
     result = requests.post(
         "https://api.openai.com/v1/images/generations",
         json={"prompt": base_promt + promt, "n": 1, "size": "256x256"},

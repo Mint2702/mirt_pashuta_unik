@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
 <head>
   <title>Генератор профиля</title>
   <link
@@ -9,25 +10,69 @@
 </head>
 
 <body>
-  <img src="{{ url_for('static', filename='fractal_icon.jpg') }}" class="icon" />
+  {% block body %}
 
-  <p>Привет! Данное приложение генерирует профиль для соц сети. Стоит лишь ввести свое ФИО, описать свою внешность и некоторые факты о себе, которые вы хотели бы упомянуть в описании профиля. Удачи!</p>
 
-  <h3>Введите описание вашей внешности и Ваше ФИО</h3>
-  <form action="/" method="post">
-    <input type="text" name="fio" placeholder="Введите Ваше ФИО" required />
-    <input type="text" name="user_facts" placeholder="Введите факты о себе" required />
-    <input type="text" name="sex" placeholder="Пол: мужской/женский" required />
-    <input type="text" name="user_description" placeholder="Опишите Вашу внешность" required />
-    <input type="submit" name="submit_button" value="Сгенерировать профиль" />
-  </form>
+    <!-- <img src="{{ url_for('static', filename='fractal_icon.jpg') }}" class="rounded mx-auto d-block" />
 
-  <a href="/showcase">
-    <input type="submit" name="submit_button" value="Витрина" />
-  </a>
+
+    <p class="mb-3">Привет! Данное приложение генерирует профиль для соц сети. Стоит лишь ввести свое ФИО, описать свою внешность и некоторые факты о себе, которые вы хотели бы упомянуть в описании профиля. Удачи!</p> -->
+
+
+
+  
+
+  
+
+
+  <div class="container mt-3">
+    <div class="form-floating mb-3">
+
+      <form action="/" method="post">
+
+        <h3>Введите описание вашей внешности и Ваше ФИО</h3>
+
+
+        <input type="text" class="form-control mb-3" id="fio" name="fio" placeholder="Введите ваше ФИО" maxlength="50" required>
+
+
+        <input type="text" class="form-control mb-3" id="user_facts" name="user_facts" placeholder="Введите факты о себе" maxlength="150" required>
+      
+
+        <label for="sex">Выберите пол</label>
+        <select class="form-select mb-3" id="sex" name="sex" aria-label="sex select" placeholder="Выбирите пол">
+          <option selected value="мужской">Мужской</option>
+          <option value="женский">Женский</option>
+        </select>
+
+
+        <label for="sex">Выберите тип аватарки</label>
+        <select class="form-select mb-3" id="image_type" name="image_type" aria-label="image type">
+          <option selected value="bitmoji">Bitmoji</option>
+          <option value="anime">Anime</option>
+        </select>
+
+
+        <input type="text" class="form-control mb-3" id="user_description" name="user_description" placeholder="Опишите вашу внешность" maxlength="150" required>
+
+        
+        <input type="submit" class="btn btn-success position-absolute end-50" name="submit_button" value="Сгенерировать профиль" >
+
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+
 
   {% if user %}
-  <img class="user" src={{ user.photo_url }}>
-  <h5>{{ user.profile_description }}</h5>
+    <img class="user" src={{ user.photo_url }}>
+    <h5>{{ user.profile_description }}</h5>
   {% endif %}
+
+
+  {% endblock %}
 </body>

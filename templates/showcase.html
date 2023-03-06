@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
 <html lang="en">
 <head>
     <title>Витрина</title>
@@ -9,21 +10,50 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
 </head>
 <body>
-    <img src="{{ url_for('static', filename='fractal_icon.jpg') }}" class="icon" />
-    <h3>Профили других пользователей</h3>
-    <h2>Тут вы можете посмотреть профили, которые были сгенерены для других пользователей</h2>
-    <div>
-        <form>
-            {% for user in users %}
-                <h4>{{ user.fio }}</h4>
-                <h5>{{ user.profile_description }}</h5>
-                <img class="user" src={{ user.photo_url }}>
-            {% endfor %}
-        </form>
-        <a href="/">
-            <input type="submit" name="submit_button" value="Создать профиль" />
-        </a>
-    </div>
+    {% block body %}
 
+    <!-- <img src="{{ url_for('static', filename='fractal_icon.jpg') }}" class="icon" /> -->
+
+    <div class="container mt-3">
+
+        
+        <h3 class="container mb-3">В данном разделе вы можете увидеть профили, сгенерированные для других людей</h2>
+        <div>
+            <form>
+                {% for user in users %}
+
+                    
+
+                    <div class="form-control p-3 mb-2 bg-secondary text-white">
+                        
+                        <h4>{{ user.fio }}</h4>
+                        <p>{{ user.profile_description }}</p>
+                        <img class="user" src={{ user.photo_url }}>
+
+
+
+                    </div>
+
+
+
+
+                
+            
+
+
+
+
+
+                    
+                {% endfor %}
+            </form>
+            
+        </div>
+
+
+    </div>
+    
+
+    {% endblock %}
 </body>
 </html>
