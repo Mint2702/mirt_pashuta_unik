@@ -40,7 +40,31 @@ def index():
 @app.route("/showcase", methods=("GET",))
 def showcase():
     users = get_all_users()
-    
-    print(users[0].photo_url)
 
     return render_template("showcase.html", users=users)
+
+
+@app.route("/news", methods=("GET",))
+def news():
+    
+
+    return render_template("news.html")
+
+
+
+
+
+@app.route("/gpt_info", methods=("GET",))
+def gpt_info():
+    
+
+    return render_template("gpt_info.html")
+
+
+
+
+@app.route("/dalle_info", methods=("GET",))
+def dalle_info():
+    
+
+    return render_template("dalle_info.html")

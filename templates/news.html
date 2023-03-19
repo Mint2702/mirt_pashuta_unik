@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <title>Новости</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+<body>
+    {% block body %}
+
+
+    <div class="container" style="background-color: #F8F9FA; margin-top: 1%;">
+        <h3>Новости</h3>
+
+    
+    <a href="" class="text-dark">
+        <div class="row mb-4 border-bottom pb-2">
+          <div class="col-3">
+            <img src="https://micdn-13a1c.kxcdn.com/images/sg/content-images/w_airjordanxbitmoji_hero2.jpg"
+              class="img-fluid shadow-1-strong rounded" alt="Best film" />
+          </div>
+  
+          <div class="col-9">
+            <p class="mb-2"><strong>Добавлена возможность выбора типа аватарки</strong></p>
+            <p>
+              <u> 15.03.2023</u>
+            </p>
+          </div>
+        </div>
+    </a>
+
+
+    <!-- News -->
+    <a href="" class="text-dark">
+        <div class="row mb-4 border-bottom pb-2">
+          <div class="col-3">
+            <img src="https://g.foolcdn.com/editorial/images/484941/ios12_apple-memoji_06042018.jpg"
+              class="img-fluid shadow-1-strong rounded" alt="Wolf" />
+          </div>
+  
+          <div class="col-9">
+            <p class="mb-2"><strong>Добавлена витрина с проектами</strong></p>
+            <p>
+              <u> 07.03.2023</u>
+            </p>
+          </div>
+        </div>
+      </a>
+  
+      <!-- News -->
+      <a href="" class="text-dark">
+        <div class="row mb-4 border-bottom pb-2">
+          <div class="col-3">
+            <img src="https://fs.znanio.ru/7ec5d2/f6/67/31bd555ca6bbb3fb7b751696eb7b8f0476.jpg"
+              class="img-fluid shadow-1-strong rounded" alt="Best film" />
+          </div>
+  
+          <div class="col-9">
+            <p class="mb-2"><strong>Добавлен раздел "Генератор профиля"</strong></p>
+            <p>
+              <u> 02.03.2023</u>
+            </p>
+          </div>
+        </div>
+      </a>
+  
+      <!-- News -->
+      <a href="" class="text-dark">
+        <div class="row mb-4 border-bottom pb-2">
+          <div class="col-3">
+            <img src="https://media.baamboozle.com/uploads/images/121191/1615924950_359097.jpeg"
+              class="img-fluid shadow-1-strong rounded" alt="Guitar" />
+          </div>
+  
+          <div class="col-9">
+            <p class="mb-2"><strong>Стартовала разработка проекта "ProfileGenerator.ru"</strong></p>
+            <p>
+              <u> 01.03.2023</u>
+            </p>
+          </div>
+        </div>
+      </a>
+
+
+    
+    
+    </div>
+    
+
+    {% endblock %}
+</body>
+</html>
