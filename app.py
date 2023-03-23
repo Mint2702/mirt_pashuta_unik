@@ -3,10 +3,12 @@ from flask import Flask, redirect, render_template, url_for, request
 
 from settings import settings
 from logic import create_image, add_user, get_all_users, create_profile_description
-
+from flask_cors import CORS
 
 app = Flask(__name__)
 openai.api_key = settings.openai_api_key
+CORS(app, supports_credentials=True)
+
 
 
 @app.route("/", methods=("GET", "POST", "PUT"))
